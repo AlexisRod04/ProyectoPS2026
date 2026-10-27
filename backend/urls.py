@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from evaluador.views import evaluador_sis
+import evaluador.views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("evaluador/", evaluador_sis),
+    path("evaluador/", evaluador.views.evaluador_sis),
+    path("/", evaluador.views.index),
 ]
